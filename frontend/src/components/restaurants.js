@@ -1,7 +1,7 @@
 import React from "react";
 
 function Restaurants() {
-  return <div></div>;
+  return <div>Restaurants</div>;
 }
 
 export default Restaurants;
