@@ -75,7 +75,7 @@ function RestaurantsList(props) {
   };
 
   const findByCuisine = () => {
-    if (searchCuisine == "All Cuisines") {
+    if (searchCuisine === "All Cuisines") {
       refreshList();
     } else {
       find(searchCuisine, "cuisine");
@@ -126,8 +126,7 @@ function RestaurantsList(props) {
             {cuisines.map((cuisine, i) => {
               return (
                 <option value={cuisine} key={i}>
-                  {" "}
-                  {cuisine.substr(0, 20)}{" "}
+                  {cuisine.substr(0, 20)}
                 </option>
               );
             })}
@@ -169,6 +168,7 @@ function RestaurantsList(props) {
                       target="_blank"
                       href={"https://www.google.com/maps/place/" + address}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
+                      rel="noreferrer"
                     >
                       View Map
                     </a>
