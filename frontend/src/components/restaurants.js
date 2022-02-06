@@ -24,8 +24,8 @@ const Restaurant = (props) => {
   };
 
   useEffect(() => {
-    getRestaurant(props?.match?.params?.id);
-  }, [props?.match?.params?.id]);
+    getRestaurant(props.match.params.id);
+  }, [props.match.params.id]);
 
   const deleteReview = (reviewId, index) => {
     RestaurantDataService.deleteReview(reviewId, props.user.id)
