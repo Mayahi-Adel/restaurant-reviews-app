@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RestaurantDataService from "../services/restaurant";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Restaurant = (props) => {
   const initialRestaurantState = {
@@ -19,13 +19,14 @@ const Restaurant = (props) => {
         console.log(response.data);
       })
       .catch((e) => {
-        console.log(e);
+        console.log("ERROR : ", e);
       });
   };
+  const { id } = useParams();
 
   useEffect(() => {
-    getRestaurant(props.match.params.id);
-  }, [props.match.params.id]);
+    getRestaurant(id);
+  }, [id]);
 
   const deleteReview = (reviewId, index) => {
     RestaurantDataService.deleteReview(reviewId, props.user.id)
@@ -55,10 +56,7 @@ const Restaurant = (props) => {
             {restaurant.address.building} {restaurant.address.street},{" "}
             {restaurant.address.zipcode}
           </p>
-          <Link
-            to={"/restaurants/" + props.match.params.id + "/review"}
-            className="btn btn-primary"
-          >
+          <Link to={"/restaurants/review"} className="btn btn-primary">
             Add Review
           </Link>
           <h4> Reviews </h4>

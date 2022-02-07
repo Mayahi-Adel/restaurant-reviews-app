@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import RestaurantDataService from "../services/restaurant";
 import { Link } from "react-router-dom";
 
-function RestaurantsList(props) {
+const RestaurantsList = (props) => {
   const [restaurants, setRestaurants] = useState([]);
   const [searchName, setSearchName] = useState("");
   const [searchZip, setSearchZip] = useState("");
@@ -75,7 +75,7 @@ function RestaurantsList(props) {
   };
 
   const findByCuisine = () => {
-    if (searchCuisine === "All Cuisines") {
+    if (searchCuisine == "All Cuisines") {
       refreshList();
     } else {
       find(searchCuisine, "cuisine");
@@ -123,10 +123,11 @@ function RestaurantsList(props) {
         </div>
         <div className="input-group col-lg-4">
           <select onChange={onChangeSearchCuisine}>
-            {cuisines.map((cuisine, i) => {
+            {cuisines.map((cuisine, index) => {
               return (
-                <option value={cuisine} key={i}>
-                  {cuisine.substr(0, 20)}
+                <option value={cuisine} key={index}>
+                  {" "}
+                  {cuisine.substr(0, 20)}{" "}
                 </option>
               );
             })}
@@ -168,7 +169,6 @@ function RestaurantsList(props) {
                       target="_blank"
                       href={"https://www.google.com/maps/place/" + address}
                       className="btn btn-primary col-lg-5 mx-1 mb-1"
-                      rel="noreferrer"
                     >
                       View Map
                     </a>
@@ -181,6 +181,6 @@ function RestaurantsList(props) {
       </div>
     </div>
   );
-}
+};
 
 export default RestaurantsList;
