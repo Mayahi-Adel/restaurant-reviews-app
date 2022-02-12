@@ -56,7 +56,7 @@ const Restaurant = (props) => {
             {restaurant.address.building} {restaurant.address.street},{" "}
             {restaurant.address.zipcode}
           </p>
-          <Link to={"/restaurants/review"} className="btn btn-primary">
+          <Link to={"/add-review"} className="btn btn-primary">
             Add Review
           </Link>
           <h4> Reviews </h4>
