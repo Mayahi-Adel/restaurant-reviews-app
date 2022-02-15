@@ -60,7 +60,7 @@ const Restaurant = (props) => {
             to={"/restaurants/" + id + "/review"}
             className="btn btn-primary"
           >
-            Add Review
+            Add Review.
           </Link>
           <h4> Reviews </h4>
           <div className="row">
