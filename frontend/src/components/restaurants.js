@@ -89,10 +89,7 @@ const Restaurant = (props) => {
                             </a>
                             <Link
                               to={{
-                                pathname:
-                                  "/restaurants/" +
-                                  props.match.params.id +
-                                  "/review",
+                                pathname: "/restaurants/" + id + "/review",
                                 state: {
                                   currentReview: review,
                                 },
