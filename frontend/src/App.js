@@ -35,7 +35,7 @@ function App() {
               <button
                 onClick={logout}
                 className="nav-link"
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", color: "black" }}
               >
                 Logout {user.name}
               </button>
